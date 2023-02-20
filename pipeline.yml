@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+              
+                // Build the project with Maven
+                sh 'mvn clean package -DskipTests'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                
+               sh ‘Deploy code’
+            }
+        }
+    }
+}
